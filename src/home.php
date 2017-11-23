@@ -8,7 +8,7 @@
   $wpkFoodActive = false;
 
   for($i=0;$i<$wpkFoorCount;$i++) {
-    if($wpkFoodDateNow === $wpkFoodDate[$i]['food_date']) {
+    if($wpkFoodDateNow === $wpkFoodDate[$i]['food_date_yearly']) {
       $wpkFoodActive = true;
       $wpkFoodNumber = $i;
     }
