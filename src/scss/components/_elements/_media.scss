@@ -1,0 +1,22 @@
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25% !important; /* 16:9 */
+  margin-bottom: 2.5rem;
+  display: block;
+  overflow: hidden;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &.clean {
+    padding-bottom: 0;
+    margin: $gutter 0;
+    clear: both;
+  }
+}

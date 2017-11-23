@@ -1,0 +1,27 @@
+//https://codex.wordpress.org/Plugin_API/Action_Reference/login_head
+
+body {
+  background: #000;
+}
+
+.login {
+  h1 a {
+    display: block;
+    width: 320px;
+    height: 140px;
+    background: url(../img/login.png) no-repeat;
+  }
+
+  .button {
+    background: #666;
+    text-shadow: none;
+    border: none;
+    // text-transform: uppercase;
+    font-weight: bold;
+
+    &:hover,
+    &:focus {
+      background: black;
+    }
+  }
+}

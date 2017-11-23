@@ -1,0 +1,116 @@
+@mixin grid {
+  position: relative;
+  margin: 0 $margin $margin $margin;
+  width: 100%;
+  background-color: rgba(0,0,0,.2);
+
+  .article-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    text-indent: 500%;
+    overflow: hidden;
+    white-space: nowrap;
+    background: transparent;
+    z-index: 8;
+  }
+
+  .image {
+    overflow: hidden;
+    display: flex;;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex: 0 0 170px;
+
+    .post-thumbnail {
+      display: block;
+      // overflow: hidden;
+      width: 100%;
+      // height: 100%;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 9em;
+
+    // .entry-meta {
+    //  align-items: flex-start;
+    //  justify-content: center;
+    //  clear: both;
+    // }
+
+    h3 {
+      // margin: $margin 0;
+      margin: 0;
+      padding: 0 $gutter; 
+    }
+  }
+
+  .relposts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    z-index: 10;
+
+    &:before {
+      display: block;
+      // border: 1px solid red;
+      content: 'Gerelateerd';
+      margin: $gutter;
+      color: white;
+      @include type-h3;
+      padding-bottom: $margin;
+      // line-height: 40px;
+    }
+
+    a {
+      display: block;
+      // width: 100%;
+      margin: $gutter;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding-bottom: $margin;
+      border-bottom: 1px solid rgba(255,255,255,.7);
+
+      &:hover {
+        color: black;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &.viewed {
+    .article-link {
+      pointer-events: none;
+    }
+
+    .content,
+    .image {
+      opacity: .5;
+    }
+    
+  }
+
+  @include medium {
+    margin: 0 $margin $gutter $margin;
+    width: auto;
+  }
+}
+

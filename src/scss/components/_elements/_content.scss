@@ -1,0 +1,100 @@
+body[data-type="single"] {
+  article.single {
+    .content {
+      p,ul,ol,dl {
+        margin-bottom: 2.5rem;
+      }
+      blockquote {
+        font-weight: bold;
+        text-align: center;
+      }
+      figure {
+        margin: 0;
+        // width: 100% !important;
+        height: auto;
+        img {
+           width: 100%;
+           height: auto;
+         }
+      }
+      iframe,
+      p iframe {
+        max-width: 100%;
+
+        &[src^="//instagram"],
+        .instagram-media-rendered {
+          display: block;
+          margin: 0 auto;
+        }
+
+        &.wp-embedded-content {
+          max-height: 80px;
+          width: 100%;
+        }
+      }
+
+      .instagram-media,
+      .instagram-media-rendered,
+      .twitter-tweet {
+        display: block !important;
+        margin: 0 auto !important;
+        text-align: center;
+        max-width: 100%;
+        box-shadow: none !important;
+
+        &:before {
+          display: none;
+        }
+      }
+      img,
+      figure {
+        &.alignleft {
+          max-width: 40%;
+          height: auto;
+          float: left;
+          margin: .3em $gutter 10px 0;
+        }
+        &.alignright {
+          max-width: 40%;
+          height: auto;
+          float: right;
+          margin: .3em 0 10px $gutter;
+        }
+        &.alignnone {
+          float: none;
+          clear: both;
+          width: 100%;
+          height: auto;
+          margin-bottom: 2.5rem;
+          @include medium {
+            margin-bottom: 3rem;
+          }
+          @include medium {
+            margin-bottom: 3.5rem;
+          }
+        }
+        &.aligncenter {
+          float: none;
+          clear: both;
+          display: block;
+          text-align: center;
+          max-width: 100%;
+          height: auto;
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: 2.5rem;
+          @include medium {
+            margin-bottom: 3rem;
+          }
+          @include medium {
+            margin-bottom: 3.5rem;
+          }
+        }
+      }
+
+      main {
+        margin-top: $gutter;
+      }
+    }
+  }
+}

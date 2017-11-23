@@ -1,0 +1,55 @@
+
+#wpadminbar,
+#adminmenuback,
+#adminmenuwrap,
+#adminmenu {
+  background: black !important;
+}
+
+#wp-admin-bar-wp-logo  {
+  width: 30px !important;
+  height: 20px;
+  background: url(../img/wpk.svg) no-repeat !important;
+  background-size: cover !important;
+  margin: 5px !important;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: transparent url(../img/wpk.svg) no-repeat !important;
+    background-size: cover !important;
+    // background-color: transparent;
+  }
+
+  .ab-item {
+    display: none;
+  }
+
+  .ab-icon {
+    display: none;
+
+    &:before {
+      display: none;
+    }
+  }
+}
+
+#wpadminbar:not(.mobile) .ab-top-menu>li:hover>.ab-item {
+  background: none !important;
+  color: none !important;
+}
+
+th#counter {
+  width: 50px;
+}
+
+th#advertorial {
+  width: 100px;
+}
+
+#insert-speech-button {
+  .dashicons {
+    color: #82878c;
+    margin-top: 3px;
+  }
+}

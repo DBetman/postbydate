@@ -1,0 +1,37 @@
+
+
+.social-btn {
+  display: inline;
+  button {
+    @extend .button;
+  	@include style-button($colorWhite, $colorGray);
+    &:after {
+      content: " " attr(data-count);
+    }
+  }
+  &.facebook button {
+    @include style-button($facebook, #ffffff);
+  }
+
+  &.twitter button {
+    @include style-button($twitter, #ffffff);
+  }
+
+  &.pinterest button {
+    @include style-button($pinterest, #ffffff);
+  }
+
+  &.whatsapp button {
+    @include style-button($whatsapp, #ffffff);
+  }
+
+  &.whatsapp {
+    display: none;
+  }
+
+  @include small-only {
+    &.whatsapp {
+      display: inline;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+body[data-type="single"] {
+  article.single {
+	  padding: $margin;
+    position: relative;
+    @include container();
+
+    .featured {
+      width: 100%;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  @include wide {
+    article.single {
+      display: flex;
+      flex: 0 0 100%;
+      flex-direction: column;
+      flex-flow: row wrap;
+      padding-bottom: $gutter;
+
+      .featured,
+      .entry-meta,
+      .social,
+      header {
+        flex: 1 100%;
+        padding-bottom: $margin;
+      }
+
+      &:not([data-type="advertorial"]) {
+        .content {
+          flex: 0 calc(100% - 336px);
+          order: 1;
+
+          .wrap {
+            width: calc(100% - 28px);
+            overflow: hidden;
+          }
+        }
+      }
+
+      aside {
+        flex: 1 336px;
+        order: 2;
+        width: 336px + $gutter;
+        max-width: 366px + $gutter;
+        min-height: 600px;
+
+        .aside-wrap {
+          position: relative;
+          width: 100%;
+          height: 100%;
+        }
+
+        #sticky {
+          min-width: 336px;
+          min-height: 280px;
+          opacity: .8;
+          position: absolute;
+          top: 0px;
+        }
+      }
+    }
+  }
+}

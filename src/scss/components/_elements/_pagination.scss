@@ -1,0 +1,48 @@
+.pagination {
+  @extend .clear;
+  overflow: hidden;
+  margin: $gutter auto;
+  text-align: center;
+  display: flex;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  max-width: 100%;
+  flex-wrap: wrap;
+
+
+  a {
+    margin: 0 $margin $margin $margin;
+    @extend .button;
+    @include style-button($colorGray, $colorWhite);
+    min-width: 150px;
+    display: flex;
+    display: -webkit-flex;
+  	display: -ms-flexbox;
+    flex-grow: 1;
+    justify-content: center;
+
+    @include small-only {
+      display: block;
+      clear: both;
+    }
+
+  }
+}
+
+body[data-type="single"] {
+  .pagination {
+    margin: $gutter auto $margin auto;
+
+    @include wide {
+      margin: $gutter auto 0 auto;
+
+
+      a:first-child {
+        margin-left: 0;
+      }
+      a:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

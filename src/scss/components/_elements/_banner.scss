@@ -1,0 +1,117 @@
+.wpk-transition-top {
+    -webkit-transition: top 2s;
+    transition: top 2s;
+}
+#wpk-fixed-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: $colorBlack;
+    z-index: 10000;
+    display: none;
+
+    iframe {
+        margin: 0 auto;
+    }
+}
+.wpk-banner {
+    text-align: center;
+}
+.wpk-countdown-bar {
+    background: $colorGray;
+    height: 0;
+    overflow: hidden;
+    -webkit-box-shadow: 0 3px 3px 0 rgba($colorBlack, 0.3);
+    -moz-box-shadow: 0 3px 3px 0 rgba($colorBlack, 0.3);
+    box-shadow: 0 3px 3px 0 rgba($colorBlack, 0.3);
+    line-height: 20px;
+    -webkit-transition: height 1s;
+    transition: height 1s;
+}
+.wpk-countdown-bar-box {
+    padding: 3px;
+    width: 320px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 11px;
+    color: $colorWhite;
+}
+.progress-radial-box {
+    border: 0 solid $colorWhite;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    display: inline;
+    position: relative;
+}
+.progress-radial {
+    position: absolute;
+    top: -2px;
+    left: 0;
+    margin-right: 30px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: $colorGray;
+}
+.progress-0 {
+    background-image: linear-gradient(90deg, $colorWhite 50%, rgba($colorBlack, 0) 50%, rgba($colorBlack, 0)), linear-gradient(90deg, $colorGray 50%, $colorWhite 50%, $colorWhite);
+}
+.progress-25 {
+    background-image: linear-gradient(90deg, $colorWhite 50%, rgba($colorBlack, 0) 50%, rgba($colorBlack, 0)), linear-gradient(180deg, $colorGray 50%, $colorWhite 50%, $colorWhite);
+}
+.progress-50 {
+    background-image: linear-gradient(-90deg, $colorGray 50%, rgba($colorBlack, 0) 50%, rgba($colorBlack, 0)), linear-gradient(270deg, $colorGray 50%, $colorWhite 50%, $colorWhite);
+}
+.progress-75 {
+    background-image: linear-gradient(0deg, $colorGray 50%, rgba($colorBlack, 0) 50%, rgba($colorBlack, 0)), linear-gradient(270deg, $colorGray 50%, $colorWhite 50%, $colorWhite);
+}
+.progress-100 {
+    background-image: linear-gradient(90deg, $colorGray 50%, rgba($colorBlack, 0) 50%, rgba($colorBlack, 0)), linear-gradient(270deg, $colorGray 50%, $colorWhite 50%, $colorWhite);
+}
+
+
+.hide-ad{
+	display: none;
+}
+
+[id^="wpk-page"], [id*=" wpk-page"] {
+	margin: 0 auto;
+	clear: both;
+	text-align: center;
+
+	div {
+		margin: 0 auto;
+		text-align: center;
+	}
+}
+
+.feed [id^="wpk-page"],
+.page-bottom-banner {
+  margin-bottom: $gutter;
+}
+
+.single aside *[width="300"] {
+  margin: 18px;
+}
+
+@include small-only {
+	[id^="wpk-page"], [id*=" wpk-page"] {
+		max-width: 336px;
+	}
+}
+
+@include medium-only {
+	[id^="wpk-page"], [id*=" wpk-page"] {
+		max-width: 728px;
+	}
+}
+
+@include wide {
+	[id^="wpk-page"], [id*=" wpk-page"], [id*="wpk-sticky"] {
+		max-width: 970px;
+    margin: 0 auto;
+	}
+}

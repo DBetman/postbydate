@@ -1,0 +1,120 @@
+.loader-container {
+  width: 14px;
+  position: relative;
+  clear: both;
+  text-align: center;
+  padding: 30px 0;
+  margin: 0 auto;
+  overflow: visible;
+  display: none;
+}
+
+.loader,
+.loader:before,
+.loader:after {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 14px;
+  background: $colorGray;
+  position: absolute;
+  content: "";
+  transform-origin: 7px 7px;
+}
+
+.loader {
+  display: block;
+  margin: 0 auto;
+  font-size: 10px;
+  position: absolute;
+  height: 14px;
+  animation: loader-center 1s linear infinite;
+
+  &:before {
+    background: $colorGrayLight;
+    left: -20px;
+    animation: loader-left 1s linear infinite;
+  }
+
+  &:after {
+    background: $colorGrayDark;
+    left: 20px;
+    animation: loader-right 1s linear infinite;
+  }
+}
+
+$l: -20px;
+$c: 0px;
+$r: 20px;
+
+@keyframes loader-left {
+  0% {
+    left: $l;
+  }
+  16.66% {
+    left: $l;
+  }
+  33.32% {
+    left: $c;
+  }
+  49.98% {
+    left: $r;
+  }
+  66.64% {
+    left: $r;
+  }
+  83.30% {
+    left: $c;
+  }
+  99.96% {
+    left: $l;
+  }
+}
+
+@keyframes loader-right {
+  0% {
+    left: $r;
+  }
+  16.66% {
+    left: $c;
+  }
+  33.32% {
+    left: $l;
+  }
+  49.98% {
+    left: $l;
+  }
+  66.64% {
+    left: $c;
+  }
+  83.30% {
+    left: $r;
+  }
+  99.96% {
+    left: $r;
+  }
+}
+
+@keyframes loader-center {
+  0% {
+    left: $c;
+  }
+  16.66% {
+    left: $r;
+  }
+  33.32% {
+    left: $r;
+  }
+  49.98% {
+    left: $c;
+  }
+  66.64% {
+    left: $l;
+  }
+  83.30% {
+    left: $l;
+  }
+  99.96% {
+    left: $c;
+  }
+}

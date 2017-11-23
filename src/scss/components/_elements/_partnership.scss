@@ -1,0 +1,23 @@
+.partnership {
+  position: relative;
+  margin: $lineHeight 0;
+  padding: 0 0 0 30vw;
+  overflow: hidden;
+  min-height: 30vw;
+
+  .partnership-title {
+    padding-left: $lineHeight;
+    @include type--xlarge;
+  }
+  .partnership-logo {
+    width: 30vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

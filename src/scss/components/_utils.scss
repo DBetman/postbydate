@@ -1,0 +1,128 @@
+/**
+*
+* Utils
+*
+**/
+
+/*==========  VARIABLES  ==========*/
+
+// Defining breakpoints
+// $medium: 550px !default;
+// $wide: 1078px !default;
+// $huge: 1200px !default;
+// $mediumContainer: 1079px !default;
+// $wideContainer: 1079px !default;
+$medium: 550px !default;
+$wide: 1078px !default;
+$huge: 1440px !default;
+$mediumContainer: 660px !default;
+$wideContainer: 960px !default;
+
+$gutter: 24px !default;
+$mediumGutter: 24px !default;
+$wideGutter: 24px !default;
+
+$margin: $gutter/2 !default;
+
+$mediumColCount: 2 !default;
+$mediumColWidth: 50% !default;
+$wideColCount: 3 !default;
+$wideColWidth: 33.334% !default;
+
+// Defining colors
+$colorWhite: #fff !default;
+$colorBlack: #222 !default;
+$colorGray: #737373 !default;
+
+$facebook: #4e66a4 !default;
+$twitter: #50abf1 !default;
+$pinterest: #f02f42 !default;
+$whatsapp: #039e00 !default;
+$youtube: #da292d !default;
+$instagram: #3f729b !default;
+
+// Defining font families
+$fontDefault: "Roboto", "San Francisco", "Segoe UI", system, -apple-system, ".SFNSText-Regular", "Helvetica Neue", sans-serif !default;
+$fontIcon: 'icons' !default;
+$fontBase: 1.6rem !default;
+
+$shadow: 0 2px 2px rgba(0,0,0,.1) !default;
+$border: 1px solid $colorGray !default;
+
+/*==========  MIXINS  ==========*/
+
+@mixin media-query($media-query) {
+  @if $media-query == small {
+    @media only screen and (max-width: $medium - 1) { @content; }
+  }
+
+  @if $media-query == medium {
+    @media only screen and (min-width: $medium) { @content; }
+  }
+
+  @if $media-query == medium-only {
+    @media only screen and (min-width: $medium) and (max-width: $wide - 1) { @content; }
+  }
+
+  @if $media-query == wide {
+    @media only screen and (min-width: $wide) { @content; }
+  }
+
+  @if $media-query == huge {
+    @media only screen and (min-width: $huge) { @content; }
+  }
+}
+
+// Just some helpers...
+@mixin small-only { @include media-query(small) { @content }; }
+@mixin medium { @include media-query(medium) { @content }; }
+@mixin medium-only { @include media-query(medium-only) { @content }; }
+@mixin wide { @include media-query(wide) { @content }; }
+@mixin huge { @include media-query(huge) { @content }; }
+
+// Mixin to constrain elements
+@mixin container($isFlex: false) {
+  box-sizing: content-box;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  // background: rgba(33,33,33,0.1); // DEBUG
+
+  @include medium {
+    max-width: $mediumContainer;
+  }
+
+  @include medium-only {
+    // padding: 0 $margin;
+  }
+
+  @include wide {
+    max-width: $wideContainer;
+  }
+
+  @if $isFlex {
+    @include medium {
+      max-width: $mediumContainer + $mediumGutter;
+    }
+
+    @include wide {
+      max-width: $wideContainer + $wideGutter;
+    }
+  }
+}
+
+@mixin numbered-listicle() {
+  &::before {
+    counter-increment: listicle;
+    content: counter(listicle) ' ';
+    color: inherit;
+    padding-left: 0px;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-align: left;
+    text-transform: none;
+    font-size: inherit;
+  }
+}

@@ -1,0 +1,81 @@
+.scroll-block {
+  width: 100%;
+  text-align: center;
+  margin: 0 0 $margin 0;
+  overflow: hidden;
+  position: relative;
+  background: $colorGray;
+
+  a.button--primary {
+    position: relative;
+    margin: $gutter 0;
+  }
+
+  .hider {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .wrapper {
+    width: 100%;
+    margin: 0;
+    // padding: 0 0 $margin 0;
+    // overflow-x: hidden;
+    overflow: auto;
+  }
+
+  .scroller {
+    width: 90vw*3;
+  }
+
+  .flex {
+    .list-item {
+      display: flex;
+      flex: 1 90vw;
+
+      article {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @include medium {
+    margin: 0 0 $margin 0;
+
+    .scroller {
+      width: 336px*3;
+      // margin: 0 $margin;
+    }
+
+
+    .flex {
+      .list-item {
+        display: flex;
+        flex: 1 336px;
+      }
+    }
+  }
+
+  @include wide {
+    overflow: visible;
+    // margin: $gutter 0 $margin 0;
+
+    .wrapper {
+      overflow: hidden;
+    }
+
+    .scroller {
+      width: 100%;
+      @include container();
+    }
+
+    .flex {
+      .list-item {
+        flex: 1 33.33%;
+      }
+    }
+  }
+}

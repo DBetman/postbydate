@@ -1,0 +1,30 @@
+#search-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  height: 0;
+  width: 0;
+
+  button {
+    margin: 0;
+    padding: 0;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    i {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 6vw;
+      z-index: 30;
+    }
+
+    &#search-close {
+      display: none;
+    }
+  }
+}

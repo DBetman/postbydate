@@ -1,0 +1,48 @@
+/**
+*
+* Helper
+*
+**/
+
+
+.clear {
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+  }
+  &::after {
+    clear: both;
+  }
+}
+
+/*==========  IE10+  ==========*/
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+}
+
+/*==========  GENERIC  ==========*/
+.centered {
+  text-align: center;
+}
+
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+
+/*==========  PRINT  ========== */
+
+@media print {
+  .navbar,
+  .app-bar,
+  .banner {
+    display: none !important;
+    visibility: hidden;
+  }
+}

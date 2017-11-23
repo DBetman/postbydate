@@ -1,0 +1,15 @@
+.sources {
+  margin: $lineHeight 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: inline;
+    margin: 0 $lineHeight 0 0;
+
+    a {
+      @extend .button;
+      @include style-button(#ffffff, $colorBlack);
+    }
+  }
+}

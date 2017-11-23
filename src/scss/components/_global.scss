@@ -1,0 +1,35 @@
+/**
+*
+* Global
+*
+**/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.main-container {
+  @include container();
+}
+
+.container {
+  @include container();
+}
+
+.container-flex {
+  @include container(true);
+}
+
+.container-medium {
+  @include medium {
+    @include container();
+  }
+}
+
+.container-small {
+  @include small-only {
+    @include container();
+  }
+}

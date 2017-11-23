@@ -1,0 +1,93 @@
+  .flex {
+    display: flex;
+    display: -webkit-flex;
+  	display: -ms-flexbox;
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .grid-item {
+    display: flex;
+    display: -webkit-flex;
+  	display: -ms-flexbox;
+    flex: 1 100%;
+
+    article {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 4;
+    }
+
+    @include medium {
+      flex: 0 0 50%;
+    }
+
+    @include wide {
+      flex: 0 0 33.33%;
+    }
+
+  }
+
+.scroll-block {
+  .flex {
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .grid-item {
+    display: flex;
+    display: -webkit-flex;
+  	display: -ms-flexbox;
+  }
+}
+
+html.msie {
+  .grid-item {
+    article {
+      margin: $margin;
+      overflow: hidden;
+      display: block;
+    }
+  }
+
+  // IE 9
+  &.msieold {
+    .flex {
+      display: block;
+    }
+    .grid-item {
+      float: left;
+      article {
+        margin: $margin;
+        overflow: hidden;
+        display: block;
+      }
+    }
+  }
+
+  &.noooooo {
+    font-size: 16px;
+    line-height: 18px;
+    div,article,header,main,footer,aside {
+      float: none;
+      clear: both;
+      margin: 12px;
+    }
+    .flex {
+      display: block;
+    }
+    .grid-item {
+      float: none;
+      clear: both;
+      margin: 12px;
+      article {
+        .post-thumbnail {
+          clear: both;
+        }
+      }
+    }
+  }
+}

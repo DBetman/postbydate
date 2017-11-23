@@ -1,0 +1,63 @@
+
+@mixin list {
+  // margin: $margin;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 1 100%;
+  box-shadow: $shadow;
+  // border: $border
+
+  .content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    // flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    // flex-grow: 99;
+    padding: 0 $margin;
+    background: $colorWhite;
+
+    h3 {
+      font-size: 1.2rem;
+      padding: .4ex 0;
+      text-align: left;
+
+
+      a {
+        text-decoration: none;
+        color: $colorBlack;
+      }
+
+    }
+  }
+
+  .entry-meta {
+    // display: none;
+    font-size: 1rem;
+    padding: 4px 0;
+  }
+
+  .partnership-logo {
+    display: none;
+  }
+
+  .image {
+    display: flex;
+    flex: 80px 80px;
+
+    .post-thumbnail {
+      display: block;
+      overflow: hidden;
+      width: 80px;
+      height: 80px;
+
+      img {
+        width: auto;
+        height: 80px;
+      }
+
+    }
+  }
+}
